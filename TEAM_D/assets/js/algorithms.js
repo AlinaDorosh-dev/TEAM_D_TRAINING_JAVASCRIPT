@@ -72,8 +72,7 @@ let ex5Alg2 = function (stringManager) {
 
 //Ejercicio 3 PDF-Algoritmos3 /Alina
 
-let ex3Alg3 = function(){
-
+let ex3Alg3 = function () {
   const hello = "Hello world";
   let colors = [];
 
@@ -103,3 +102,32 @@ let ex3Alg3 = function(){
 };
 
 //ex3Alg3();
+
+//Ejercicio 5 PDF-Algoritmos3 /Alina
+let ex5Alg3 = function () {
+  let numbers = [];
+
+  for (let i = 0; i < 4; i++) {
+    let min = 0;
+    let max = 9;
+    numbers[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  //console.log(numbers);
+
+  let letters = [];
+
+  for (let i = 0; i < 3; i++) {
+    let charactersAllowed = "BCDFGHJKLMNPRSTVWXYZ";
+    letters[i] =
+      charactersAllowed[Math.floor(Math.random() * charactersAllowed.length)];
+  }
+  //console.log(letters);
+
+  let carRegistration = numbers.join("") + letters.join("");
+
+  console.log(
+    `%c Your new car registration number is`, `font-weight:bold; font-size: 20px;color: #288BA8 `);
+  console.log(`%c ${carRegistration}`,`font-weight:bold; font-size: 20px;color: #F06000 `);
+};
+
+//ex5Alg3();
