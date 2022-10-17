@@ -11,49 +11,30 @@
 // promedio([31.7, 30.7, 32.5, 29.4, 31.6, 28.5, 31.7]);
 
 //Exercise 7 Algorithms2
-// let min = 0;
-// let max = 10;
-// let intentos = 0;
-// let aleatorio = Math.floor(Math.random() * max - min + 1) + min;
-// let numero;
+let min = 0;
+let max = 10;
+let numberRandom = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(numberRandom);
+let guessNumber;
+let centinela = false;
+let tries = 3;
 
-// for (intentos; intentos < 3; intentos++) {
-//   numero = parseInt(prompt("Enter a number between " + min + " and " + max));
+while (!centinela && tries >= 1) {
+  if (tries == 3) {
+    guessNumber = parseInt(prompt(`Insert a number, tries ${tries}`));
+  } else {
+    guessNumber = parseInt(
+      prompt(`Try again, you have ${tries} tries`)
+    );
+  }
 
-//   if (numero >= min && numero <= max) {
-//     if (numero < aleatorio) {
-//       alert("Try it again");
-//     } else if (numero > aleatorio) {
-//       alert("Try it again.");
-//     } else if (numero == aleatorio) {
-//       break;
-//     }
-//   } else {
-//     alert("Sorry! Good luck in love");
-//   }
-// }
-
-// if(numero == aleatorio){
-//   alert("You win!")
-// } else{
-//   alert("Sorry! Good luck in love")
-// }
-function iniciar() {
-  let intentos = 3;
-  let num = Math.floor(Math.random() * 10 + 1);
-  while (intentos > 0) {
-    let numPlayer = prompt("Write a number:" + intentos + "attempts");
-    if (numPlayer == num) alert("You win!");
-    break;
+  if (numberRandom == guessNumber) {
+    centinela = true;
   }
-  if (numPlayer > num) {
-    alert("Try it again.");
-  }
-  if (numPlayer < num) {
-    alert("Try it again.");
-  }
-  vidas--;
+  tries--;
 }
-if(vidas==0){
-  alert("Sorry, Good luck in love")
+if (centinela) {
+  alert("You win!");
+} else {
+  alert("Sorry, Good luck in love!");
 }
