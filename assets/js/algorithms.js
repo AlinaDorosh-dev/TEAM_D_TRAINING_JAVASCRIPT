@@ -1,6 +1,6 @@
-// // ### 1.-Desarrollo 3 ###
+// // ### 1.-Desarrollo 3 ###  ELIAS
 // // Pedimos al usuario los dos valores:
-function Desarrollo31() {
+function desarrollo31() {
 let max = parseInt(prompt("Enter max limit (Number)"));
 let min = parseInt(prompt("Enter min limit (Number)"));
 
@@ -27,10 +27,10 @@ if (isNaN(max) == false && isNaN(min) == false) {
   );
 }
 }
-
-// ### 4.-Desarrollo 3 ###
+//desarrollo31()
+// ### 4.-Desarrollo 3 ### Elias
 // Pedimos DNI al usuario
-function Desarrollo34() {
+function desarrollo34() {
 let dni = prompt("Introduzca su DNI");
 let dniN = parseInt(dni.substring(0, 8));
 let dniL = dni.substring(8, 9);
@@ -65,4 +65,5 @@ if (dniL == checkLetter[dniN % 23]) {
 } else {
   console.error("The data entered is wrong");
 }
-}
+};
+//desarrollo34();
