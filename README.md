@@ -1,3 +1,3 @@
 # TEAM_D_REPO
 
-## First team practice JavaScript
+## First team practice in JavaScript
