@@ -1,9 +1,11 @@
 // ESTADÍSTICA DE TEXTO --------------------
+//Exercise 6 Algorithms2//Oliver
 function textStats(wordCount) {
   wordCount = prompt("Add some text");
   // WORD LENGTH --------------
   let commas = wordCount.replace(/,/g, "");
-  console.log(`Length: ${commas.length}`);
+  console.log(`Length: ${wordCount.length} characters`);
+  console.log(`Words: ${wordCount.split(" ").length} `);
 
   // LENGTH WITHOUT SPACES ----------
   console.log(
@@ -44,7 +46,7 @@ function textStats(wordCount) {
     }, words[0]);
     return shortest;
   }
-  console.log("The shortest word is: ", findShortestWord(wordCount).length);
+  console.log("The shortest word: ", findShortestWord(wordCount).length, "characters");
   //   LONGEST WORD-----
   function getLongestWord(wordCount) {
     commas = wordCount.replace(/,/g, "");
@@ -58,7 +60,7 @@ function textStats(wordCount) {
         longestWord = words[i];
       }
     }
-    console.log("The longest word is: ", longestWord.length);
+    console.log("The longest word is: ", longestWord.length, "characters");
   }
 
   getLongestWord(wordCount);
@@ -70,8 +72,10 @@ function textStats(wordCount) {
   console.log("This is the avarage word length: " + averageWordLength);
 
 }
-textStats("This is the text statistics function");
-// EX. 2/3 HORA DEL SISTEMA + NOMBRE USUARIO:
+//textStats("This is the text statistics function");
+
+// EX. 2/3 //  Oliver
+//HORA DEL SISTEMA + NOMBRE USUARIO:
 function dayGreetings(greetings) {
   let userName = prompt("Add user name");
   const fechaDehoy = new Date();
@@ -90,9 +94,10 @@ function dayGreetings(greetings) {
 
   greeting(`${welcomeText} ${userName}`);
 }
-dayGreetings("This is the greetings function");
+//dayGreetings("This is the greetings function");
 
-// GENERANDO NUMEROS ALEATORIOS 7/3 ------------------------
+// GENERANDO NUMEROS ALEATORIOS 
+////Exercise 7 Algorithms3//   Oliver ------------------------
 function randomNumbers(generator) {
   const nums = new Set();
   while (nums.size !== 100) {
@@ -111,4 +116,4 @@ function randomNumbers(generator) {
   let highestToLowest = evens.sort((a, b) => b - a);
   console.log(highestToLowest);
 }
-randomNumbers("This is the random number generator");
+//randomNumbers("This is the random number generator");
