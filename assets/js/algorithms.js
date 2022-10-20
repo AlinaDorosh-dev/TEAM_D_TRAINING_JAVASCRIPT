@@ -1,23 +1,3 @@
-//Llamadas
-//Algoritmos2
-// exercise1();                         //Coral
-//exercise2();                          //Coral 
-//exercise3();                          //Coral
-//ex4Alg2();                            //Fran
-//ex5Alg2(stringManager);               //Alina
-//textStats();                          //Oliver  
-//ex7Alg2();                            //Fran
-//ex8Alg2();                            //Alina y Dani Vallejo       
-
-//Algoritmos3
-
-//desarrollo31();                       //Elias
-//dayGreetings();                       //Oliver
-//ex3Alg3();                            //Alina
-//desarrollo34();                      //Elias  
-
-
-
 //Algorithms 2 Exercise 1 / CORAL
 const exercise1 = () => {
   let word = "palindrome";
@@ -186,21 +166,21 @@ function textStats(wordCount) {
 
   console.log(`Percent of unique words: ${percentUnique}%`);
   // SHORTEST WORD -------------
-//   function getShortestWord(wordCount) {
-//     commas = wordCount.replace(/,/g, "");
-//     let words = commas.split(" ");
-//     let maxLength = 0;
-//     let shortestWord = "";
+  //   function getShortestWord(wordCount) {
+  //     commas = wordCount.replace(/,/g, "");
+  //     let words = commas.split(" ");
+  //     let maxLength = 0;
+  //     let shortestWord = "";
 
-//     for (let i = 0; i < words.length; i++) {
-//       if (words[i].length > maxLength) {
-//         maxLength = words[i].length;
-//         shortestWord = words[i];
-//       }
-//     }
-//     console.log("The shortest word is: ", shortestWord.length);
-//   }
-// getShortestWord(wordCount);
+  //     for (let i = 0; i < words.length; i++) {
+  //       if (words[i].length > maxLength) {
+  //         maxLength = words[i].length;
+  //         shortestWord = words[i];
+  //       }
+  //     }
+  //     console.log("The shortest word is: ", shortestWord.length);
+  //   }
+  // getShortestWord(wordCount);
   function findShortestWord(wordCount) {
     commas = wordCount.replace(/,/g, "");
     var words = commas.split(" ");
@@ -211,7 +191,11 @@ function textStats(wordCount) {
     }, words[0]);
     return shortest;
   }
-  console.log("The shortest word: ", findShortestWord(wordCount).length, "characters");
+  console.log(
+    "The shortest word: ",
+    findShortestWord(wordCount).length,
+    "characters"
+  );
   //   LONGEST WORD-----
   function getLongestWord(wordCount) {
     commas = wordCount.replace(/,/g, "");
@@ -235,12 +219,11 @@ function textStats(wordCount) {
     NoSpacesNoCommas / wordCount.split(" ").length
   );
   console.log("This is the avarage word length: " + averageWordLength);
-
 }
 //textStats("This is the text statistics function");
 
 //Exercise 7 Algorithms2 FRAN
-function ex7Alg2(){
+function ex7Alg2() {
   let min = 0;
   let max = 10;
   let numberRandom = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -248,7 +231,7 @@ function ex7Alg2(){
   let guessNumber;
   let centinela = false;
   let tries = 3;
-  function anyLuck(){
+  function anyLuck() {
     while (!centinela && tries >= 1) {
       if (tries == 3) {
         guessNumber = parseInt(prompt(`Insert a number, tries ${tries}`));
@@ -264,9 +247,10 @@ function ex7Alg2(){
       alert("You win!");
     } else {
       alert("Sorry, Good luck in love!");
-    }};
-    anyLuck();
-  };
+    }
+  }
+  anyLuck();
+}
 
 //ex7Alg2();
 
@@ -615,20 +599,20 @@ function desarrollo31() {
   let max = parseInt(prompt("Enter max limit (Number)"));
   let min = parseInt(prompt("Enter min limit (Number)"));
   // Comprobamos que los valores introducidos por el usuario sean correctos
-  
+
   if (isNaN(max) == false && isNaN(min) == false) {
     // Creamos e introducimos dentro 20 números aleatorios entre el max y el min ingresados por el usuario inclusive estos.
     let n = Array(20)
       .fill()
       .map(() => Math.floor(Math.random() * (max - min + 1)) + min);
-  
+
     // Imprimimos por consola el array
     console.log(n);
-  
+
     // Ahora especificamos el valor máximo y mínimo dentro del array:
     let maxV = Math.max(...n);
     let minV = Math.min(...n);
-  
+
     // Imprimimos por pantalla el resultado
     console.log(`Min value: ${minV}\nMax value: ${maxV}`);
   } else {
@@ -636,10 +620,10 @@ function desarrollo31() {
       "############## Error ##############\n  El valor introducido no es válido"
     );
   }
-  }
-  //desarrollo31();
+}
+//desarrollo31();
 
-  // EX. 2/3 //  Oliver
+// EX. 2/3 //  Oliver
 //HORA DEL SISTEMA + NOMBRE USUARIO:
 function dayGreetings(greetings) {
   let userName = prompt("Add user name");
@@ -727,20 +711,49 @@ function desarrollo34() {
     "K",
     "E",
   ];
-  
+
   if (dniL == checkLetter[dniN % 23]) {
     console.log("Valid DNI");
   } else {
     console.error("The data entered is wrong");
   }
-  };
-  //desarrollo34();
+}
+//desarrollo34();
 
+//Ejercicio 5 PDF-Algoritmos3 /Alina
+let ex5Alg3 = function () {
+  let numbers = [];
 
+  for (let i = 0; i < 4; i++) {
+    //Generate 4 random numbers and fill array
+    let min = 0;
+    let max = 9;
+    numbers[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  //console.log(numbers);
 
+  let letters = []; //Generate 3 random letters and fill array
 
+  for (let i = 0; i < 3; i++) {
+    let charactersAllowed = "BCDFGHJKLMNPRSTVWXYZ";
+    letters[i] =
+      charactersAllowed[Math.floor(Math.random() * charactersAllowed.length)];
+  }
+  //console.log(letters);
 
+  let carRegistration = numbers.join("") + letters.join(""); //Join two arrays in one string
 
+  console.log(
+    `%c Your new car registration number is`,
+    `font-weight:bold; font-size: 20px;color: #288BA8 `
+  );
+  console.log(
+    `%c ${carRegistration}`,
+    `font-weight:bold; font-size: 20px;color: #F06000 `
+  );
+};
+
+//ex5Alg3();
 
 //Algorithms 3 exercise 6 / CORAL
 
@@ -784,44 +797,27 @@ const exercise6 = () => {
 };
 //exercise6();
 
-
-
-
-
-//Ejercicio 5 PDF-Algoritmos3 /Alina
-let ex5Alg3 = function () {
-  let numbers = [];
-
-  for (let i = 0; i < 4; i++) {
-    //Generate 4 random numbers and fill array
-    let min = 0;
-    let max = 9;
-    numbers[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+// GENERANDO NUMEROS ALEATORIOS
+////Exercise 7 Algorithms3//   Oliver ------------------------
+function randomNumbers(generator) {
+  const nums = new Set();
+  while (nums.size !== 100) {
+    nums.add(Math.floor(Math.random() * 500) + 1);
   }
-  //console.log(numbers);
 
-  let letters = []; //Generate 3 random letters and fill array
-
-  for (let i = 0; i < 3; i++) {
-    let charactersAllowed = "BCDFGHJKLMNPRSTVWXYZ";
-    letters[i] =
-      charactersAllowed[Math.floor(Math.random() * charactersAllowed.length)];
-  }
-  //console.log(letters);
-
-  let carRegistration = numbers.join("") + letters.join(""); //Join two arrays in one string
-
-  console.log(
-    `%c Your new car registration number is`,
-    `font-weight:bold; font-size: 20px;color: #288BA8 `
-  );
-  console.log(
-    `%c ${carRegistration}`,
-    `font-weight:bold; font-size: 20px;color: #F06000 `
-  );
-};
-
-//ex5Alg3();
+  console.log([...nums]);
+  const arr = [...nums];
+  const odds = arr.filter((number) => {
+    return number % 2 !== 0;
+  });
+  console.log(odds);
+  const evens = arr.filter((number) => {
+    return number % 2 === 0;
+  });
+  let highestToLowest = evens.sort((a, b) => b - a);
+  console.log(highestToLowest);
+}
+//randomNumbers("This is the random number generator");
 
 //Ejercicio 8 PDF-Algoritmos3 /Alina
 function ex8Alg3() {
@@ -988,45 +984,27 @@ function caesarCipher() {
 }
 //caesarCipher();
 
+//Llamadas
 
+//Algoritmos2
 
+//exercise1();             //palindrome             //Coral
+//exercise2();               //no lemon              //Coral
+//exercise3();               //asteriscos            //Coral
+//ex4Alg2();                 //temperatura           //Fran
+//ex5Alg2(stringManager);                            //Alina
+//textStats();                                       //Oliver
+//ex7Alg2();              //Good luck in love        //Fran
+//ex8Alg2();             //Passwords                 //Alina y Dani Vallejo
 
+//Algoritmos3
 
-
-
-
-// GENERANDO NUMEROS ALEATORIOS 
-////Exercise 7 Algorithms3//   Oliver ------------------------
-function randomNumbers(generator) {
-  const nums = new Set();
-  while (nums.size !== 100) {
-    nums.add(Math.floor(Math.random() * 500) + 1);
-  }
-
-  console.log([...nums]);
-  const arr = [...nums];
-  const odds = arr.filter((number) => {
-    return number % 2 !== 0;
-  });
-  console.log(odds);
-  const evens = arr.filter((number) => {
-    return number % 2 === 0;
-  });
-  let highestToLowest = evens.sort((a, b) => b - a);
-  console.log(highestToLowest);
-}
-//randomNumbers("This is the random number generator");
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
+//desarrollo31();           //random array            //Elias
+//dayGreetings();                                     //Oliver
+//ex3Alg3();                //HEX                     //Alina
+//desarrollo34();          //DNI                      //Elias
+//ex5Alg3();               //Matriculas               //Alina
+//exercise6();             //Motivacion               //Coral
+//randomNumbers();                                    //Oliver
+//ex8Alg3();               //Cartas                   //Alina
+//caesarCipher();                                     //Alina
