@@ -19,7 +19,6 @@ password.length = parseInt(passwordLength);
 
 //Dejo esta parte comentada para no tenerque introdusir al prompt cada vez que hago la prueba
 
-
 /* let capitalLetter = prompt(
   "Do you want include capital letter in your pasword? y/n"
 );
@@ -58,7 +57,6 @@ if (symbol == "y") {
   alert('Only "y" or "n" can be accepted');
 }; */
 
-
 //Cuatro variables para hacer pruebas
 //Cuando el Switch este completo se eliminaran y se descomentará la parte de arriba
 let capitalLetter = true;
@@ -70,7 +68,7 @@ let max;
 let randomGenerator = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-  //15 probables combinaciones de la respuesta del usario
+//15 probables combinaciones de la respuesta del usario
 switch (true) {
   //Nº1.Solo minusculas
   case (capitalLetter == false &&
@@ -174,14 +172,14 @@ switch (true) {
     symbol == true:
     password[0] = String.fromCharCode(randomGenerator(65, 90)); //Al menos una mayuscula
     password[1] = String.fromCharCode(randomGenerator(97, 122)); // Al menos una minuscula
-    password[2] = String.fromCharCode(randomGenerator(33, 48));  //Al menos un simbolo
+    password[2] = String.fromCharCode(randomGenerator(33, 48)); //Al menos un simbolo
     //de 3 a 5 con mayusculas
     for (let index = 3; index < 6; index++) {
       password[index] = String.fromCharCode(randomGenerator(65, 90));
     }
     // 6 y 7 con simbolo
     for (let index = 6; index < 8; index++) {
-      password[index] = String.fromCharCode(randomGenerator(33, 48));
+      password[index] = String.fromCharCode(randomGenerator(97, 122));
     }
     //Resto con minusculas
     for (let index = 8; index < password.length; index++) {
@@ -190,19 +188,137 @@ switch (true) {
     password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
     break;
 
-//Parte de codigo de Dani Vallejo
+  //Parte de codigo de Dani Vallejo
 
-//Nº9. Minusculas y numeros
-//Nº10. Minusculas y simbolos
-//Nº11. Mayusculas y numeros
-//Nº12. Mayusculas y simbolos
-//Nº13. Simbolos y numeros
-//Nº14. Mayusculas, numeros y simbolos
-//Nº15. Minusculas, numeros y simbolos
-
-
-
-
+  //Nº9. Minusculas y numeros
+  case capitalLetter == true &&
+    lowercaseLetter == false &&
+    number == true &&
+    symbol == false:
+    password[0] = String.fromCharCode(randomGenerator(65, 90)); //Al menos una mayuscula
+    password[1] = randomGenerator(0, 9); //Al menos un numero
+    //de 2 a 5 con mayusculas
+    for (let index = 2; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(65, 90));
+    }
+    //Resto con numeros
+    for (let index = 6; index < password.length; index++) {
+      password[index] = randomGenerator(0, 9);
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+  //Nº10. Minusculas y simbolos
+  case capitalLetter == false &&
+    lowercaseLetter == true &&
+    number == false &&
+    symbol == true:
+    password[0] = String.fromCharCode(randomGenerator(97, 122)); //Al menos una minuscula
+    password[1] = String.fromCharCode(randomGenerator(33, 48)); //Al menos un simbolo
+    //de 2 a 5 minusculas
+    for (let index = 2; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(97, 122));
+    }
+    //Resto con simbolos
+    for (let index = 6; index < password.length; index++) {
+      password[index] = String.fromCharCode(randomGenerator(33, 48));
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+  //Nº11. Mayusculas y numeros
+  case capitalLetter == true &&
+    lowercaseLetter == false &&
+    number == true &&
+    symbol == false:
+    password[0] = String.fromCharCode(randomGenerator(65, 90)); //Al menos una mayuscula
+    password[1] = randomGenerator(0, 9); //Al menos un numero
+    //de 2 a 5 con mayusculas
+    for (let index = 2; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(65, 90));
+    }
+    //Resto con numeros
+    for (let index = 6; index < password.length; index++) {
+      password[index] = randomGenerator(0, 9);
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+  //Nº12. Mayusculas y simbolos
+  case capitalLetter == true &&
+    lowercaseLetter == false &&
+    number == false &&
+    symbol == true:
+    password[0] = String.fromCharCode(randomGenerator(65, 90)); //Al menos una mayuscula
+    password[1] = String.fromCharCode(randomGenerator(33 ,48));//Al menos un simbolo
+    //de 2 a 5 con mayusculas
+    for (let index = 2; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(65, 90));
+    }
+    //Resto con simbolos
+    for (let index = 6; index < password.length; index++) {
+      password[index] = String.fromCharCode(randomGenerator(33, 48));
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+  //Nº13. Simbolos y numeros
+  case capitalLetter == false &&
+    lowercaseLetter == false &&
+    number == true &&
+    symbol == true:
+    password[0] = randomGenerator(0, 9); //Al menos un numero
+    password[1] = String.fromCharCode(randomGenerator(33 ,48));//Al menos un simbolo
+    //de 2 a 5 con numeros
+    for (let index = 2; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(0, 9));
+    }
+    //Resto con simbolos
+    for (let index = 6; index < password.length; index++) {
+      password[index] = String.fromCharCode(randomGenerator(33, 48));
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+  //Nº14. Mayusculas, numeros y simbolos
+  case capitalLetter == true &&
+    lowercaseLetter == false &&
+    number == true &&
+    symbol == true:
+    password[0] = String.fromCharCode(randomGenerator(65, 90));//Al menos una mayuscula
+    password[1] = randomGenerator(0, 9); //Al menos un numero
+    password[2] = String.fromCharCode(randomGenerator(33 ,48));//Al menos un simbolo
+    //de 3 a 5 con mayusculas
+    for (let index = 3; index < 6; index++) {
+      password[index] = String.fromCharCode(randomGenerator(65, 90));
+    }
+    //6 y 7 con numero
+    for (let index = 6; index < 8; index++) {
+      password[index] = String.fromCharCode(randomGenerator(0, 9));
+    }
+    //Resto con simbolos
+    for (let index = 6; index < password.length; index++) {
+      password[index] = String.fromCharCode(randomGenerator(33, 48));
+    }
+    password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+    break;
+   //Nº15. Minusculas, numeros y simbolos
+   case capitalLetter == true &&
+   lowercaseLetter == false &&
+   number == true &&
+   symbol == true:
+   password[0] = String.fromCharCode(randomGenerator(97, 122));//Al menos una mayuscula
+   password[1] = randomGenerator(0, 9); //Al menos un numero
+   password[2] = String.fromCharCode(randomGenerator(33 ,48));//Al menos un simbolo
+   //de 3 a 5 con minusculas
+   for (let index = 3; index < 6; index++) {
+     password[index] = String.fromCharCode(randomGenerator(97, 122));
+   }
+   //6 y 7 con numero
+   for (let index = 6; index < 8; index++) {
+     password[index] = String.fromCharCode(randomGenerator(0, 9));
+   }
+   //Resto con simbolos
+   for (let index = 6; index < password.length; index++) {
+     password[index] = String.fromCharCode(randomGenerator(33, 48));
+   }
+   password.sort(() => Math.random() - 0.5); //Mezclamos el array para que no salga siempre en el mismo index.
+   break;
   default:
     alert("ERROR");
     break;
